@@ -16,11 +16,9 @@ public class Setup {
     @Before
     public void setWebDriver() throws Exception {
     	if ("firefox".equals(System.getProperty("test-browser"))) {
-    		System.setProperty("webdriver.gecko.driver","/home/federico/progetti/test/bdd/geckodriver-v0.32.0-linux64/geckodriver");
     		driver = new FirefoxDriver();
         } else {
-        	System.setProperty("webdriver.chrome.driver","/home/federico/progetti/test/bdd/chromedriver_linux64/chromedriver");
-    		ChromeOptions chromeOptions = new ChromeOptions();
+        	ChromeOptions chromeOptions = new ChromeOptions();
     		chromeOptions.addArguments("['start-maximized']");
     		driver = new ChromeDriver(chromeOptions);
     	}
